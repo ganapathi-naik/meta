@@ -10,6 +10,6 @@ class Solution1762 {
             }
         }
         Collections.reverse(building);
-        return building.toArray(new int[0]);
+        return building.stream().mapToInt(Integer::intValue).toArray();
     }
 }

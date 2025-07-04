@@ -52,6 +52,6 @@ class MovingAverage {
                 avgs.add(sum / size);
             }
         }
-        return avgs.toArray(new int[0]);
+        return avgs.stream().mapToInt(Integer::intValue).toArray();
     }
 }

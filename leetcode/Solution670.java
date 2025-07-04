@@ -94,7 +94,7 @@ class Solution670 {
                 int temp = list.get(i);
                 list.set(i, list.get(i - 1));
                 list.set(i - 1, temp);
-                return list.toArray(new int[0]);
+                return list.stream().mapToInt(Integer::intValue).toArray();
             }
         }
         return nums;
