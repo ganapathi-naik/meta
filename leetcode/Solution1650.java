@@ -4,18 +4,19 @@
  *     int val;
  *     TreeNode left;
  *     TreeNode right;
+ *     TreeNode parent;
  *     TreeNode(int x) { val = x; }
  * }
  */
 class Solution1650 {
     public TreeNode lowestCommonAncestor(TreeNode p, TreeNode q) {
         Set<TreeNode> lcaNodes = new HashSet<>();
-        while(Objects.nonNull(p)) {
+        while(p != null) {
             lcaNodes.add(p);
             p = p.parent;
         }
 
-        while(Objects.nonNull(q)) {
+        while(q != null) {
             if(lcaNodes.conatins(q)) {
                 return q;
             }
