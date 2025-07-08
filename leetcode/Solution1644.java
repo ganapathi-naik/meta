@@ -31,7 +31,7 @@ class Solution1644 {
             isQPresent = true;
             return q;
         }
-        if(Objects.nonNull(left) && Objects.nonNull(right)) {
+        if(left != null && right != null) {
             return node;
         } else if(left == null) {
             return right;
