@@ -33,3 +33,36 @@ The heap stores at most k elements → O(k) space.
 Time Complexity: O(n log k)
 Space Complexity: O(k)
  */
+
+class Solution215 {
+    public int findKthLargest(int[] nums, int k) {
+        k = nums.length - k;
+        return quickSelect(nums, 0, nums.length - 1, k);
+    }
+
+    private int quickSelect(int[] nums, int left, int right, int k) {
+        int index = left;
+        int pivot = nums[right];
+
+        for(int i = left; i < right; i++) {
+            if(nums[i] <= pivot) {
+                int temp = nums[i];
+                nums[i] = nums[index];
+                nums[index] = temp;
+                index++;
+            }
+        }
+
+        int temp = nums[index];
+        nums[index] = nums[right];
+        nums[right] = temp;
+
+        if(index > k) {
+            return quickSelect(nums, left, index - 1, k);
+        } else if(index < k) {
+            return quickSelect(nums, index + 1, right, k);
+        } else {
+            return nums[index];
+        }
+    }
+}
