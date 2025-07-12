@@ -1,18 +1,17 @@
 class Solution125 {
     public boolean isPalindrome(String s) {
-        String sLower = s.toLowerCase();
-        int l = 0, r = sLower.length() - 1;
+        int l = 0, r = s.length() - 1;
 
         while (l < r) {
-            if (!isAlphanumeric(sLower.charAt(l))) {
+            if (!isAlphanumeric(s.charAt(l))) {
                 l++;
                 continue;
             }
-            if (!isAlphanumeric(sLower.charAt(r))) {
+            if (!isAlphanumeric(s.charAt(r))) {
                 r--;
                 continue;
             }
-            if (sLower.charAt(l) != sLower.charAt(r)) {
+            if (Character.toLowerCase(s.charAt(l)) != Character.toLowerCase(s.charAt(r))) {
                 return false;
             }
             l++;
