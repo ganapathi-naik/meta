@@ -3,7 +3,7 @@ class Solution339 {
         return dfs(nestedList, 1);
     }
 
-    private int dfs(List<NestedInteger> nestedList), int level) {
+    private int dfs(List<NestedInteger> nestedList, int level) {
         int res = 0;
         for(NestedInteger value : List<NestedInteger> nestedList) {
             if(value.isInteger()) {
