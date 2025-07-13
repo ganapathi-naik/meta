@@ -11,7 +11,7 @@ public class Solution1570 {
                 pairs.add(new Pair(i, nums[i]));
             }
         }
-        indexToValuePairs = pairs.stream().mapToInt(Integer::intValue).toArray();
+        indexToValuePairs = pairs.toArray(new Pair[0]);
     }
 
     public int dotProduct(Solution1570 vec) {
