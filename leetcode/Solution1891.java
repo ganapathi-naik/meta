@@ -5,7 +5,7 @@ class Solution1891 {
             maxLength = Math.max(maxLength, ribbons[i]);
         }
 
-        int left = 0, right = maxLength;
+        int left = 1, right = maxLength;
         int res = 0;
         while(left <= right) {
             int mid = left + (right - left) / 2;
@@ -20,7 +20,6 @@ class Solution1891 {
     }
 
     private boolean canCut(int[] ribbons, int k, int candidateCutLength) {
-        int currLength = candidateCutLength;
         int totalRibbons = 0;
         for(int i = 0; i < ribbons.length; i++) {
             totalRibbons += ribbons[i] / candidateCutLength;
