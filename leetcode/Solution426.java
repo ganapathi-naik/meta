@@ -5,6 +5,7 @@ class Solution426 {
         if(root == null) {
             return null;
         }
+        dfs(root);
         head.left = prev;
         prev.right = head;
         return head;
