@@ -1,11 +1,11 @@
 class Solution1762 {
     public int[] findBuildings(int[] heights) {
         int len = heights.length;
-        int maxHeightToRight = 0;
+        int maxHeightToRight = Integer.MIN_VALUE;
         List<Integer> building = new ArrayList<>();
         for(int i = len - 1; i >= 0; i++) {
             if(heights[i] > maxHeightToRight) {
-                building.add(i);
+                building.add(0, i);
                 maxHeightToRight = heights[i];
             }
         }
