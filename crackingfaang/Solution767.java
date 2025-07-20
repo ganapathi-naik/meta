@@ -29,7 +29,7 @@ class Solution767 {
             }
         }
 
-        if(prevNode != null && prevNode.frequency > 0) {
+        if(prevNode != null) {
             return "";
         }
         return sb.toString();
