@@ -54,14 +54,12 @@ class Solution111 {
         int level = 1;
         Queue<TreeNode> q = new LinkedList<>();
         q.offer(root);
-        boolean found = false;
         while (!q.isEmpty()) {
             int size = q.size();
             while (size > 0) {
                 TreeNode node = q.poll();
                 if (node.left == null && node.right == null) {
-                    found = true;
-                    break;
+                    return level;
                 }
 
                 if (node.left != null) {
@@ -72,9 +70,6 @@ class Solution111 {
                     q.offer(node.right);
                 }
                 size--;
-            }
-            if (found) {
-                break;
             }
             level = level + 1;
         }
