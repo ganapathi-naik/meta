@@ -24,10 +24,11 @@ class Solution286 {
             int distance = node.get(2);
 
             if(distance <= rooms[row][col]) {
+                rooms[row][col] = distance;
                 for(int[] dir : dirs) {
                     int newRow = row + dir[0];
                     int newCol = col + dir[1];
-                    if(newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols) {
+                    if(newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols && rooms[newRow][newCol] != -1) {
                         q.offer(Arrays.asList(newRow, newCol, distance + 1));
                     }
                 }
