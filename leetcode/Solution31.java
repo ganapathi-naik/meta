@@ -38,7 +38,7 @@ class Solution31 {
 
         if (swapIndex >= 0) {
             for (int i = peakIndex + 1; i < nums.length; i++) {
-                if (nums[i] < nums[swapIndex] && nums[i] >= nums[peakIndex]) {
+                if (nums[i] < nums[swapIndex] && nums[i] > nums[peakIndex]) {
                     peakIndex = i;
                 }
             }
