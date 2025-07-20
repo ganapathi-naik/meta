@@ -5,7 +5,7 @@ class Solution339 {
 
     private int dfs(List<NestedInteger> nestedList, int level) {
         int res = 0;
-        for(NestedInteger value : List<NestedInteger> nestedList) {
+        for(NestedInteger value : nestedList) {
             if(value.isInteger()) {
                 res += level * value.getInteger();
             } else {
