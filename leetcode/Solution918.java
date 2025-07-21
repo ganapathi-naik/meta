@@ -27,3 +27,27 @@ class Solution918 {
         return Math.max(totalSum - globalMin, globalMax);
     }
 }
+
+class Solution918 {
+    public int maxSubarraySumCircular(int[] nums) {
+        int globalMax = nums[0];
+        int globalMin = nums[0];
+
+        int currMax = nums[0];
+        int currMin = nums[0];
+        int totalSum = nums[0];
+        for(int i = 1; i < nums.length; i++) {
+            totalSum += nums[i];
+
+            currMax = Math.max(nums[i], currMax + nums[i]);
+            globalMax = Math.max(globalMax, currMax);
+
+            currMin = Math.min(nums[i], currMin + nums[i]);
+            globalMin = Math.min(globalMin, currMin);
+        }
+        if(globalMax < 0) {
+            return globalMax;
+        }
+        return Math.max(totalSum - globalMin, globalMax);
+    }
+}
